@@ -11,7 +11,6 @@ class TaskTemplateManagement:
     def edit_template(self):
         Редактирование существующего шаблона задачи
 
-
 class ProjectManagement:
     def __init__(self):
         # Инициализация модуля управления проектами
