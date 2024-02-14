@@ -1,6 +1,15 @@
-class NewImagineClass:
+class TaskTemplateManagement:
     def __init__(self):
-        print("HELLO WORLD")
+        Инициализация модуля управления шаблонами задач
+
+    def create_template(self):
+        Создание нового шаблона задачи
+
+    def apply_template(self):
+        Применение шаблона к задаче
+
+    def edit_template(self):
+        Редактирование существующего шаблона задачи
 
 class ProjectManagement:
     def __init__(self):
