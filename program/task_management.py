@@ -1,15 +1,15 @@
-# class TaskTemplateManagement:
-    # def __init__(self):
-        # Инициализация модуля управления шаблонами задач
+class TaskTemplateManagement:
+    def __init__(self):
+        Инициализация модуля управления шаблонами задач
 
-    # def create_template(self):
-        # Создание нового шаблона задачи
+    def create_template(self):
+        Создание нового шаблона задачи
 
-    # def apply_template(self):
-        # Применение шаблона к задаче
+    def apply_template(self):
+        Применение шаблона к задаче
 
-    # def edit_template(self):
-        # Редактирование существующего шаблона задачи
+    def edit_template(self):
+        Редактирование существующего шаблона задачи
 
 
 class ProjectManagement:
