@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="wow.min.js"></script>
+    <script>new WOW().init()</script>
+    <script src="https://kit.fontawesome.com/fc5368a64a.js" crossorigin="anonymous"></script>
+    <title>Лабораторная работа № 6</title>
+</head>
+
+<script>
+    window.addEventListener('scroll', () => {
+        let distance = window.scrollY;
+        
+        document.querySelectorAll('.section').forEach((item, i)=>{
+
+            if  (item.offsetTop <= distance) {
+                
+                document.querySelectorAll(".navigationInnerItem, .navigationOuterItem").forEach((item) => {
+                    if (item.classList.contains('navigationInnerItemActive')) 
+                        item.classList.remove('navigationInnerItemActive');
+                    else if (item.classList.contains('navigationOuterItemActive')) 
+                        item.classList.remove('navigationOuterItemActive');
+                });
+
+                let tagA = document.querySelectorAll(".navigationInnerItem, .navigationOuterItem")[i];
+                if (tagA.classList[0] == 'navigationInnerItem')
+                    tagA.classList.add('navigationInnerItemActive');  
+                else if (tagA.classList[0] == 'navigationOuterItem')
+                    tagA.classList.add('navigationOuterItemActive');                  
+            }
+        });
+
+        var outerContainer = document.getElementById("outContainer");
+        var navigationMenu = document.getElementById("navMenu");
+
+        var queryOUT = document.querySelector("#outContainer");
+        var queryNAV = document.querySelector("#navMenu");
+        var queryFTR = document.querySelector("#footerID");
+             
+        var valuesOUT = queryOUT.getBoundingClientRect();
+        var valuesNAV = queryNAV.getBoundingClientRect();
+        var valuesFTR = queryFTR.getBoundingClientRect();
+
+        
+        
+        
+        if (valuesNAV.bottom > valuesFTR.top){
+            navigationMenu.style.opacity = 0+"%";
+         
+        }
+        else{
+            navigationMenu.style.opacity = 100+"%";
+          
+        }
+    });
+</script>
+<script>
+    document.ready(()=>{
+        document.querySelectorAll(".navigationInnerItem, .navigationOuterItem").forEach((current) => 
+        {
+            current.addEventListener('click', () => {
+                document.querySelectorAll(".navigationInnerItem, .navigationOuterItem").forEach((item) => {
+                    if (item.classList.contains('navigationInnerItemActive')) 
+                        item.classList.remove('navigationInnerItemActive');
+                    else if (item.classList.contains('navigationOuterItemActive')) 
+                        item.classList.remove('navigationOuterItemActive');
+                });
+            
+                if (current.classList[0] == 'navigationInnerItem')
+                    current.classList.add('navigationInnerItemActive');  
+                else if (current.classList[0] == 'navigationOuterItem')
+                    current.classList.add('navigationOuterItemActive');              
+            });
+            
+                
+        });
+    });
+
+</script>
+
+<body class="main">
+    <div class="header">
+        <div class="HELP_MANUAL">
+            <a class="buttonManual" target="_blank" href="https://github.com/NikitaDonPutilov/Task_Manager">GITHUB</a>
+            <a class="buttonManual" target="_blank" href="html/index.html">DOCUMENTATION</a>
+            <a class="buttonManual" target="_blank" href="UserDoc.chm">CHM</a>
+        </div>
+    </div>
+
+    
+    <div class="outerContainer" id="outContainer">
+
+
+        <div class="navigationMenu" id="navMenu">
+            <ul class="navigationList">
+                <li><a class="navigationOuterItem navigationOuterItemActive" href="#Introduction">Introduction</a></li>
+                <li><a class="navigationOuterItem" href="#Chapter1">Financial operations</a>
+                </li>
+                <li><a class="navigationOuterItem" href="#Chapter2">Integration</a>
+                </li>
+                <li><a class="navigationOuterItem" href="#Chapter3">Real data</a>
+                </li>
+                <li><a class="navigationOuterItem" href="#Chapter4">Task management</a>
+                </li>
+                <li><a class="navigationOuterItem" href="#Chapter5">Virtual reality</a>
+                </li>
+                <li><a class="navigationOuterItem" href="#Chapter6">Social interaction</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <section class="section" id="Introduction">
+                <div class="sectionContainer">
+                    <div class="introduction">
+                        <p class="titleStyle">Введение</p>
+                        <p class="paragraphMargin">Добро пожаловать в документацию по планировщику задач с реализацией финансовых расчетов и возможностью просмотра истории, разделяемой по временным отрезкам. Этот планировщик представляет собой мощный инструмент для эффективного управления вашими задачами, проектами и финансами, предоставляя вам удобный способ анализа и интеграции данных.</p>
+                        <p class="paragraphMargin">Эта документация поможет вам освоить все возможности нашего планировщика задач и достичь максимальной эффективности в вашей работе. Если у вас возникнут вопросы или потребуется дополнительная помощь, не стесняйтесь обращаться к ней. Удачи в использовании нашего продукта!</p>
+                    </div>
+                </div>
+            </section>
+            <section class="section" id="Chapter1">
+                <div class="sectionContainer">
+                    <p class="titleStyle">Финансовые операции и анализ</p>
+                    <p class="textStyle">Модуль "Финансовые операции и анализ" предоставляет вам возможность эффективно управлять вашими финансами, проводить анализ доходов и расходов, а также создавать прогнозы бюджета на будущие периоды. Вы можете легко отслеживать свои финансовые операции, контролировать свой бюджет и принимать обоснованные финансовые решения. Этот модуль позволяет вам:</p>
+                    <p class="textStyle">1. Вести учет ваших финансовых операций, таких как доходы, расходы, инвестиции и долги.</p>             
+                    <p class="textStyle">2. Создавать категории для организации ваших финансовых данных и облегчения анализа.</p>
+                    <p class="textStyle">3. Анализировать вашу финансовую активность с помощью графиков, диаграмм и отчетов.</p>
+                    <p class="textStyle">4. Прогнозировать бюджет на будущие периоды на основе ваших текущих финансовых данных и планируемых операций.</p>
+                </div>
+            </section>
+            <section class="section" id="Chapter2">
+                <div class="sectionContainer">
+                    <p class="titleStyle">Интеграция и пользовательский опыт</p>
+                    <p class="textStyle">Модуль "Интеграция и пользовательский опыт" обеспечивает интеграцию вашего планировщика задач с другими приложениями и сервисами, повышая ваш пользовательский опыт и упрощая вашу работу. С помощью этого модуля вы можете:</p>
+                    <p class="textStyle">1. Импортировать данные из других приложений и сервисов для полноты вашей информации.</p>             
+                    <p class="textStyle">2. Экспортировать данные из вашего планировщика задач для использования в других приложениях и отчетности.</p>
+                    <p class="textStyle">3. Интегрировать ваш планировщик задач с электронной почтой, календарем, облачными хранилищами и другими инструментами для более удобной работы.</p>
+                    <p class="textStyle">4. Настроить интерфейс вашего планировщика задач в соответствии с вашими предпочтениями и потребностями.</p>
+                </div>
+            </section>
+            <section class="section" id="Chapter3">
+                <div class="sectionContainer">
+                    <p class="titleStyle">Работа в реальном времени</p>
+                    <p class="textStyle">Модуль "Работа в реальном времени" предоставляет вам возможность работать с вашими задачами и проектами в режиме реального времени, что обеспечивает более эффективное взаимодействие и совместную работу с вашей командой. С помощью этого модуля вы можете:</p>
+                    <p class="textStyle">1. Мгновенно видеть изменения, вносимые в задачи и проекты другими участниками команды.</p>             
+                    <p class="textStyle">2. Отслеживать прогресс выполнения задач и проектов в режиме реального времени.</p>
+                    <p class="textStyle">3. Быстро реагировать на изменения и новые задачи, чтобы обеспечить выполнение целей и сроков.</p>
+                </div>
+            </section>          
+            <section class="section" id="Chapter4">
+                <div class="sectionContainer">
+                    <p class="titleStyle">Управление задачами и проектами</p>
+                    <p class="textStyle">Модуль "Управление задачами и проектами" предоставляет вам инструменты для эффективного планирования, назначения и отслеживания ваших задач и проектов. С помощью этого модуля вы можете:</p>
+                    <p class="textStyle">1. Создавать задачи и проекты, определять их приоритеты и сроки выполнения.</p>             
+                    <p class="textStyle">2. Назначать ответственных за выполнение задач и отслеживать их прогресс.</p>
+                    <p class="textStyle">3. Создавать подзадачи и связывать их с главными задачами и проектами.</p>
+                    <p class="textStyle">4. Использовать различные виды представлений, такие как списки, диаграммы Ганта и доски задач, для удобного отслеживания и управления задачами и проектами.</p>
+                </div>
+            </section>
+            <section class="section" id="Chapter5">
+                <div class="sectionContainer">
+                    <p class="titleStyle">Виртуальная реальность</p>
+                    <p class="textStyle">Модуль "Виртуальная реальность" добавляет в ваш планировщик функции виртуальной реальности, позволяя вам визуализировать данные и взаимодействовать с вашими задачами и проектами в новом формате. С помощью этого модуля вы можете:</p>
+                    <p class="textStyle">1. Просматривать ваши задачи и проекты в виртуальной среде, обеспечивая более глубокое понимание их структуры и взаимосвязей.</p>             
+                    <p class="textStyle">2. Взаимодействовать с вашими задачами и проектами с помощью жестов и движений виртуального интерфейса.</p>
+                    <p class="textStyle">3. Создавать трехмерные модели ваших проектов и просматривать их с различных ракурсов для более полного представления о них.</p>
+                </div>
+            </section>
+            <section class="section" id="Chapter6">
+                <div class="sectionContainer">
+                    <p class="titleStyle">Социальное взаимодействие</p>
+                    <p class="textStyle">Модуль "Социальное взаимодействие" предоставляет вам возможность общаться с вашей командой и обмениваться информацией о задачах и проектах непосредственно в вашем планировщике. С помощью этого модуля вы можете:</p>
+                    <p class="textStyle">1. Обмениваться сообщениями и комментариями с другими участниками команды для обсуждения задач и проектов.</p>             
+                    <p class="textStyle">2. Получать уведомления о новых комментариях, обновлениях и изменениях в задачах и проектах.</p>
+                    <p class="textStyle">3. Просматривать историю изменений и комментариев для каждой задачи и проекта, чтобы быть в курсе происходящего.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="footer" id="footerID">
+        
+    </div>
+</body>
+</html>
